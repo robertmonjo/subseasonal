@@ -9,3 +9,7 @@ This repository contains material to support an application example of subseason
 - R code:
   * List of TeWA functions
   * Example to apply the functions by using the above data.
+
+![](example.svg)<!-- -->
+
+## How to cite
