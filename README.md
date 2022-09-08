@@ -1,6 +1,6 @@
 Teleconnection and Wavelet-Arima (TeWA) approach
-
 ================
+
 Darío Redolat and Robert Monjo
 8 September de 2022
 
