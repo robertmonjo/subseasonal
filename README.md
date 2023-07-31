@@ -21,4 +21,4 @@ This repository contains material to support an application example of subseason
 
 ## How to cite
 
-Redolat, D.; Monjo. R, (2022): Ocean-atmosphere coupling can statistically predict Mediterranean subseasonal anomalies: The TeWA approach. Journal of Climate (under review).
+Redolat, D.; Monjo. R, (2023): Ocean-atmosphere coupling can statistically predict Mediterranean subseasonal anomalies: The TeWA approach. Weather and Forecasting (under review).
