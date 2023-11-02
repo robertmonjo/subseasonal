@@ -1,12 +1,22 @@
 ##### EXAMPLE OF TeWA PREDICTION ######
 
 #### Reading functions and data####
+library("WaveletComp")
+library("TTR")
+library("ggplot2")
+library("forecast")
+library("TSPred") 
+library("WaveletArima")
+
+setwd("C:/Users/rober/Dropbox/Rutinas/")
 
 # Uploading the TeWA functions:
 source("TeWA_functions.r")
 
 # Uploading the raw predictors:
 rawpredictors = readRDS("predictores.rds")
+smtpredictors = readRDS("smtpredictores.rds")
+already_smoothed = TRUE
 
 # Uploading the observed time series of the target variable to forecast it: 
 # It is necessary to use the same length than 'rawpredictors'
@@ -29,19 +39,25 @@ validation_obs = readRDS("validacion_obs.rds")
 
 
 
-####  Before forecasting: It is recomended to smooth the atmospheric indices to reduce noise #### 
+####  Before forecasting: It is recommended to smooth the atmospheric indices to reduce noise #### 
+if(!already_smoothed)
+{
+  atmospherics = c("ULMO", "WeMO", "MO", "AJSL", "GJSL")
+  spredictors= rawpredictors
+  for(i in 1:dim(rawpredictors)[2])
+    if(colnames(rawpredictors)[i] %in% atmospherics)
+      smtpredictors[,i] = smooth_with_wavelet(rawpredictors[,i])
+  
+  saveRDS(smtpredictors, "smtpredictores.rds")
+}
 
-atmospherics = c("ULMO", "WeMO", "MO", "AJSL", "GJSL")
-spredictors= rawpredictors
-for(i in 1:dim(rawpredictors)[2])
-if(colnames(rawpredictors)[i] %in% atmospherics)
-  spredictors[,i] = smooth_with_wavelet(rawpredictors[,i])
 
 
 
-####  Now, we can apply the smoothed predictores #### 
 
-out = teWA_example(serieobs, spredictors,  horizon=horizon, nsmooth=nsmooth, training=training, Show=T, validation_obs=NULL)
+####  Now, we can apply the smoothed predictors #### 
+
+out = teWA_example(serieobs, smtpredictors,  horizon=horizon, nsmooth=nsmooth, training=training, Show=T, validation_obs=NULL)
 
 
 
