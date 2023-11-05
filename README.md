@@ -6,7 +6,7 @@ Darío Redolat and Robert Monjo
 
 ## Abstract
 
-The TeWA code provides a complementary method to predict seasonal anomalies by supposing that (1) delayed teleconnection patterns inform about the ocean–atmosphere coupling on a subseasonal timescale through the lens of (2) partially predictable quasi-periodic oscillations since (3) forecast signal can be extracted by smoothing noise in a continuous lead time horizon. The method consists of combining lag-correlated teleconnections (a total of 15 indices) with self-predictability techniques of residual quasi-oscillation based on Wavelet (cyclic) and ARIMA (linear) analyses. Prediction skill of the Teleconnection-Wavelet-ARIMA (TeWA) combination was cross-validated and compared to that of the SEAS5-ECMWF model (90 days ahead), and shown in Redolat and Monjo (2022).
+The TeWA code provides a complementary method to predict seasonal anomalies by supposing that (1) delayed teleconnection patterns inform about the ocean–atmosphere coupling on a subseasonal timescale through the lens of (2) partially predictable quasi-periodic oscillations since (3) forecast signal can be extracted by smoothing noise in a continuous lead time horizon. The method consists of combining lag-correlated teleconnections (a total of 15 indices) with self-predictability techniques of residual quasi-oscillation based on Wavelet (cyclic) and ARIMA (linear) analyses. Prediction skill of the Teleconnection-Wavelet-ARIMA (TeWA) combination was cross-validated and compared to that of the SEAS5-ECMWF model (90 days ahead), and shown in Redolat and Monjo (2023).
 
 This repository contains material to support an application example of subseasonal forecasting:
 - Data: 
